@@ -1,0 +1,2 @@
+GET http://localhost:8080/numbers?count=3&min=10&max=100
+Accept: application/json

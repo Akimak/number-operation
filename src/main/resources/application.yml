@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  h2:
+    console:
+    enabled: true
+    path: /h2-console
+  datasource:
+    platform: h2
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+app:
+  random-service:
+    url: 'www.random.org'
+    service: 'integers'
+  param:
+    defaultCount: 10
+    defaultMin: 1
+    defaultMax: 10
+feign:
+  httpclient:
+    enabled: true
